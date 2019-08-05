@@ -13,6 +13,7 @@ article {
     margin: 16px;
     border-radius: 8px;
     border: 2px solid #f0f0f0;
+    cursor: pointer;
 }
 
 a {

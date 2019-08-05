@@ -1,8 +1,7 @@
 import '@babel/polyfill';
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import {cookie}  from './cookie.js';
-import thunk  from 'redux-thunk';
+import { storageMiddleWare }  from './localStorage.js';
 
 import reducer from './reducers/index';
 
@@ -10,7 +9,7 @@ import mySaga from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
-const middleWares = [sagaMiddleware, cookie];
+const middleWares = [ sagaMiddleware, storageMiddleWare ];
 
 const store = createStore(
   reducer,

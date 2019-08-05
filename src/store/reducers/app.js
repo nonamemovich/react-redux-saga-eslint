@@ -2,7 +2,7 @@ import {
     ADD_JOKE
 } from "../actions/app";
 
-import {getJokeList} from '../cookie';
+import {getJokeList} from '../localStorage';
 
 let initState = getJokeList();
 
