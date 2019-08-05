@@ -1,23 +1,23 @@
-import { 
-    ADD_JOKE
-} from "../actions/app";
+import {
+  ADD_JOKE,
+} from '../actions/app';
 
-import {getJokeList} from '../localStorage';
+import { getJokeList } from '../localStorage';
 
-let initState = getJokeList();
+const initState = getJokeList();
 
-export default function ( state=initState, action ) {
-    switch (action.type) {
-        case ADD_JOKE.LOAD:
-            return [ ...state];
+export default function (state = initState, action) {
+  let newState;
+  switch (action.type) {
+    case ADD_JOKE.LOAD:
+      return [...state];
 
-        case ADD_JOKE.SUCCESS:
-            var newState = [ ...state];
-            newState.push(action.payload);
-            return newState;
+    case ADD_JOKE.SUCCESS:
+      newState = [...state];
+      newState.push(action.payload);
+      return newState;
 
-        default: 
-            return state;
-    }
+    default:
+      return state;
+  }
 }
-

@@ -1,4 +1,7 @@
 {
+    "env": {
+        "browser": true
+    },
     "parserOptions": {
         "ecmaVersion": 6,
         "sourceType": "module",
@@ -6,7 +9,11 @@
             "jsx": true
         }
     },
+    "extends": [
+        "airbnb"
+    ],
     "rules": {
         "semi": "error"
-    }
+    },
+    "parser": "babel-eslint"
 }
