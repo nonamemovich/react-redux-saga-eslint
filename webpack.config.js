@@ -21,7 +21,7 @@ const styleLoader = {
 };
 
 module.exports = {
-	entry: { index: [ '@babel/polyfill', './src/index.js'] },
+	entry: { index: [ '@babel/polyfill', './src/index.jsx'] },
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'bundled.js'
@@ -30,7 +30,7 @@ module.exports = {
 		rules:[
 			{
 				enforce: "pre",
-				test: /\.js$/,
+				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
 				use: {
 					loader : "eslint-loader",
@@ -40,7 +40,7 @@ module.exports = {
 					}
 				},
 			}, {
-				test: /\.js$/,
+				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader'
@@ -50,6 +50,9 @@ module.exports = {
 				use: [ styleLoader, cssLoader]
 			}
 		]
+	},
+	resolve: {
+		extensions: ['.js', '.jsx']
 	},
 	plugins: [htmlPlugin]
 };
