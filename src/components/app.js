@@ -10,7 +10,7 @@ class App extends Component {
         let jokeList = this.props.app;
         return (
             <section className="feed">
-                <button onClick={ e=> this.addNewJoke() }> new Joke </button>
+                <a onClick={ e=> this.addNewJoke() }> MORE!!! </a>
                 {
                     jokeList.map( joke => {
                         return (
