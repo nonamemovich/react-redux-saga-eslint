@@ -10,10 +10,23 @@
         }
     },
     "extends": [
-        "airbnb"
+        "airbnb", "eslint:recommended", "plugin:react/recommended", "plugin:react-redux/recommended"
     ],
     "rules": {
-        "semi": "error"
+        "semi": "error",
+        "no-set-state": "off",
+        "react/jsx-no-bind": ["error", {
+            "allowArrowFunctions": true,
+            "allowBind": false,
+            "ignoreRefs": true
+        }],
+        "react/no-did-update-set-state": "error",
+        "react/no-unknown-property": "error",
+        "react/no-unused-prop-types": "error",
+        "react/prop-types": 1,
+        "react/react-in-jsx-scope": "error",
+        "no-shadow": "off"
     },
+    "plugins": [ "react", "react-redux" ],
     "parser": "babel-eslint"
 }

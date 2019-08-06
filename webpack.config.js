@@ -29,22 +29,9 @@ module.exports = {
 	module: {
 		rules:[
 			{
-				enforce: "pre",
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
-				use: {
-					loader : "eslint-loader",
-					options: {
-						cache: false,
-						formatter: 'codeframe'
-					}
-				},
-			}, {
-				test: /\.(js|jsx)$/,
-				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader'
-				}
+				use: ["babel-loader"]
 			}, {
 				test: /\.scss$/,
 				use: [ styleLoader, cssLoader]
